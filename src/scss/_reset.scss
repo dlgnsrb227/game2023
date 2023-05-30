@@ -1,0 +1,77 @@
+@import url('https://webfontworld.github.io/NexonFootballGothic/NexonFootballGothic.css');
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/PyeongChang/PyeongChang.css');
+@import url('https://webfontworld.github.io/busan/Busan.css');
+@import url('https://webfontworld.github.io/neodgm/NeoDunggeunmo.css');
+@import url('https://webfontworld.github.io/mapo/MapoDPP.css');
+@import url('https://webfontworld.github.io/sandbox/SBAggro.css');
+@import url('https://webfontworld.github.io/seoulhangang/SeoulHangang.css');
+@import url('https://webfontworld.github.io/Cafe24Danjunghae/Cafe24Danjunghae.css');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+li, ul, ol {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    width: 100%;
+}
+
+em {
+    font-style: normal;
+}
+
+.nexonfootball {
+    font-family: NexonFootballGothic;
+}
+
+.nexon {
+    font-family: NexonLv1Gothic;
+}
+
+.pyeonchang {
+    font-family: PyeongChang;
+}
+
+.busan {
+    font-family: Busan;
+}
+
+.neodungguenmo {
+    font-family: NeoDunggeunmo;
+}
+
+.Mapodpp {
+    font-family: MapoDPP;
+}
+
+.aggro {
+    font-family: SBAggro;
+}
+
+.seoulhangang {
+    font-family: SeoulHangang;
+}
+
+.danjunghae {
+    font-family: Cafe24Danjunghae;
+}
