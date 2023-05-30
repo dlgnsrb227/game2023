@@ -41,10 +41,10 @@ function tetris(){
             [[0, 0],[1, 0],[2, 0],[2, 1]],
         ],
         Lmino: [
-            [[1, 0], [1, 1], [1, 2], [0, 2]],
-            [[0, 0], [0, 1], [1, 1], [2, 1]],
-            [[0, 0], [1, 0], [0, 1], [0, 2]],
-            [[0, 0], [1, 0], [2, 0], [2, 1]] 
+            [[0, 0], [0, 1], [1, 2], [0, 2]],
+            [[2, 0], [0, 1], [1, 1], [2, 1]],
+            [[0, 0], [1, 0], [1, 1], [1, 2]],
+            [[0, 0], [1, 0], [2, 0], [0, 1]] 
         ]
     }
 
@@ -54,7 +54,7 @@ function tetris(){
     let tempMovingItem;
 
     const movingItem = {    // 블록정보 변수
-        type: "Tmino",
+        type: "Zmino",
         direction: 0,
         top: 0,
         left: 0,
@@ -66,7 +66,7 @@ function tetris(){
         // console.log(tempMovingItem)
 
         newLine();  // 라인 만들기
-        renderBlocks();     // 블록 만들기
+        // renderBlocks();     // 블록 만들기
         generateNewBlock();
     };
 
