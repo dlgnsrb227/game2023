@@ -1,5 +1,6 @@
 function tetris(){
     const tetrisView = document.querySelector(".tetris__play .view ul");
+    const scoreDisplay = document.querySelector(".tetris__score");
 
     const line_rows = 20;   // 세로
     const line_cols = 12;   // 가로
@@ -65,25 +66,37 @@ function tetris(){
         tempMovingItem = {...movingItem};
         // console.log(tempMovingItem)
 
-        newLine();  // 라인 만들기
+        for(let i=0; i<line_rows; i++){
+            newLine();  // 라인 만들기
+        }
         // renderBlocks();     // 블록 만들기
         generateNewBlock();
     };
 
     // 라인만들기
     function newLine(){
-        for(let i=0; i<line_rows; i++){
-            const li = document.createElement("li");
-            const ul = document.createElement("ul");
+        const li = document.createElement("li");
+        const ul = document.createElement("ul");
 
-            for(let j=0; j<line_cols; j++){
-                const subLi = document.createElement("li");
-                ul.prepend(subLi);
-            }
-
-            li.prepend(ul);
-            tetrisView.prepend(li);
+        for(let j=0; j<line_cols; j++){
+            const subLi = document.createElement("li");
+            ul.prepend(subLi);
         }
+
+        li.prepend(ul);
+        tetrisView.prepend(li);
+    }
+
+    // 리셋하기
+    function restartTetris() {
+        score = 0;
+        duration = 500;
+        
+        const tetrisMinos = tetrisView.querySelectorAll("li > ul > li");
+        tetrisMinos.forEach((minos) => {
+            minos.className = "";
+        });
+        generateNewBlock();
     }
 
     // 블록 만들기
@@ -116,12 +129,19 @@ function tetris(){
                 target.classList.add(type, "moving");
             } else {
                 tempMovingItem = {...movingItem};
-                setTimeout(() => {
-                    renderBlocks();
-                    if(moveType === "top"){
-                        seizeBlock();
-                    }
-                },0.1);
+
+                if(moveType === "gameover"){
+                    clearInterval(downInterval);
+                    alert("game over");
+                    restartTetris()
+                } else {
+                    setTimeout(() => {
+                        renderBlocks("gameover");
+                        if(moveType === "top"){
+                            seizeBlock();
+                        }
+                    },0);
+                }
                 return true;
             }
         });
@@ -139,13 +159,14 @@ function tetris(){
         checkMatch();
     };
 
+    // 한 줄 제거
     function checkMatch(){
         const childNodes = tetrisView.childNodes;
 
         childNodes.forEach(child => {
             let matched = true;
             child.children[0].childNodes.forEach(li => {
-                if(!li.classList.contains("seizes")){
+                if(!li.classList.contains("seized")){
                     matched = false;
                 }
             });
@@ -153,7 +174,8 @@ function tetris(){
                 child.remove();
                 newLine();
                 score++;
-                scoreDiplay.innerText = score;
+                let realscore = score * 10;
+                scoreDisplay.innerText = realscore;
             }
         });
 
