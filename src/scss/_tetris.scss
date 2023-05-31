@@ -12,6 +12,51 @@
     height: 700px;
     backdrop-filter: blur(10px);
     border-radius: 20px;
+
+    .tetris__start{
+        background-color: rgba(0, 1, 44, 0.5);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 300px;
+        height: 500px;
+        border-radius: 10px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+
+        > span {
+            display: block;
+            margin: 0 auto;
+            color: aliceblue;
+            width: 200px;
+            height: 100px;
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 120px;
+            text-shadow: 
+                -2px -2px 5px black,
+                2px -2px 5px black,
+                -2px  2px 5px black,
+                2px  2px 5px black;
+            background-image: url(../images/tetris01.png);
+            background-size: contain;
+            background-position: 0 0;
+        }
+        > button {
+            display: block;
+            border: 0;
+            font-size: 24px;
+            font-weight: 600;
+            padding: 10px 40px;
+            border-radius: 30px;
+        }
+    }
+    .tetris__text{}
+    .tetris__score{}
 }
 .tetris__play {
     .view {
@@ -37,30 +82,31 @@
         }
     }
     .Tmino {
+        border: 6px outset #952d98 !important;
         background-color: #952d98;
     }
     .Imino {
-        /* border: 6px outset #1AA9DE !important; */
+        border: 6px outset #1AA9DE !important;
         background-color: #009FDA;
     }
     .Omino {
-        /* border: 6px outset #FED01A !important; */
+        border: 6px outset #FED01A !important;
         background-color: #FECB00;
     }
     .Zmino {
-        /* border: 6px outset #EF3E4D !important; */
+        border: 6px outset #EF3E4D !important;
         background-color: #ED2939;
     }
     .Smino {
-        /* border: 6px outset #78C53E !important; */
+        border: 6px outset #78C53E !important;
         background-color: #69BE28;
     }
     .Jmino {
-        /* border: 6px outset #1A74C4 !important; */
+        border: 6px outset #1A74C4 !important;
         background-color: #0065BD;
     }
     .Lmino {
-        /* border: 6px outset #FF861A !important; */
+        border: 6px outset #FF861A !important;
         background-color: #FF7900;
     }
 }

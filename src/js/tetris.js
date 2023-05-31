@@ -1,6 +1,8 @@
 function tetris(){
     const tetrisView = document.querySelector(".tetris__play .view ul");
     const scoreDisplay = document.querySelector(".tetris__score");
+    const tetrisStartwindow = document.querySelector(".tetris__start");
+    const tetrisStart = document.querySelector(".tetris__start button");
 
     const line_rows = 20;   // 세로
     const line_cols = 12;   // 가로
@@ -248,7 +250,17 @@ function tetris(){
 
     // 이미지 다운이 안되더라도 실행
     window.addEventListener("DOMContentLoaded", () => {
-        init()
+        // init()
+        // tetrisStart.addEventListener("click", function(){
+        //     init();
+        //     tetrisStartwindow.style.display = 'none';
+        // });
+        $(".view").css("display", "none");
+        $(".tetris__start > button").click(function(){
+            init();
+            $(".tetris__start").fadeOut(500);
+            $(".view").fadeIn(500);
+        });
     });
 };
 export default tetris;
