@@ -11,9 +11,9 @@
 
 ------------------------------
 ## 사용 스택
-- gsap : (https://greensock.com/gsap/)를 사용하여 타임라인 애니메이션을 만들고 ScrollTrigger로 제어했습니다.
-- lenis : (https://lenis.studiofreight.com/)를 사용하여 부드러운 스크롤 효과를 구현했습니다.
-- javascript의 메서드를 사용해 scrollTop값을 구해 값에 따른 효과를 구현했습니다.
+- gsap : (https://greensock.com/gsap/)의 draggable 효과를 사용하여 폴더가 드래그 될 수 있도록 구현했습니다.
+- Vite : (https://vitejs.dev/)를 사용하여 번들링했습니다.
+- javascript의 메서드를 사
 - html, css 를 사용하여 기본적인 페이지를 구성했습니다.
 
 -----------------------------------
