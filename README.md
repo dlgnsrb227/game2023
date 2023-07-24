@@ -1,7 +1,7 @@
 # Game Effects
 -------------------------------
 
-![gameEffects 썸네일이미지](/img/game_thumb.PNG)
+![gameEffects 썸네일이미지](/public/images/game_thumb.PNG)
 
 ##### 레트로 느낌의 페이지를 만들었습니다.
 ##### 테트리스 게임과 음악 플레이어를 구현했습니다.
